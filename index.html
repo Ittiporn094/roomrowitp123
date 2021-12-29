@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css" />
     <script src="javasc.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>calroomrow</title>
-</head>
-<body style="margin: 0;">
-    <div style="text-align:center;padding:1em 0;"> <h3><a style="text-decoration:none;"><span style="color:rgb(0, 0, 0);font-size: 150%;margin-top: 0%;">เวลาประเทศไทย</span></h3> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FBangkok" width="100%" height="115" frameborder="0" seamless></iframe> </div>
 
-        <form class="boxcal1" oninput="
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="margin: 0;">
+    <div class="boxclock">
+        <div style="text-align:center;padding:1em 0;">
+            <h3><a style="text-decoration:none;"><span
+                        style="color:rgb(0, 0, 0);font-size: 120%;margin-top: 0%;">เวลาประเทศไทย</span></h3> <iframe
+                src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=medium&timezone=Asia%2FBangkok"
+                width="100%" height="100%" frameborder="0" seamless></iframe>
+        </div>
+    </div>
+
+    <form class="boxcal1" oninput="
         paywater.value=(parseInt(waterafter.value)-parseInt(waterbefore.value))*parseInt(costwater.value),
         usewater.value=(parseInt(waterafter.value)-parseInt(waterbefore.value)),
         paylight.value=(parseInt(lightafter.value)-parseInt(lightbefore.value))*parseInt(costlight.value),
         uselight.value=(parseInt(lightafter.value)-parseInt(lightbefore.value)),
         allcost.value=(parseInt(paywater.value)+parseInt(paylight.value)+parseInt(costroom.value))">
-            <h2 class="title1">น้ำ</h2>
-            <h3>ค่าน้ำ <input class="boxinput1" type="number" id="costwater" value="20"> บาท<br>
-            น้ำเดือนเก่า <input class="boxinput2" type="number" id="waterbefore" value=""><br>
-            น้ำเดือนใหม่ <input class="boxinput2" type="number" id="waterafter" value=""><br>
-            ใช้ไป <output class="boxoutput" name="usewater"></output> หน่วย<br>
-            ราคา <output class="boxoutput" name="paywater"></output> บาท<br>
-
-            <h2 class="title1">ไฟ</h2>
-            <h3>ค่าไฟ <input class="boxinput1" type="number" id="costlight" value="7"> บาท<br>
-            ไฟเดือนเก่า <input class="boxinput2" type="number" id="lightbefore" value=""><br>
-            ไฟเดือนใหม่ <input class="boxinput2" type="number" id="lightafter" value=""><br>
-            ใช้ไป <output class="boxoutput" name="uselight"></output> หน่วย<br>
-            ราคา <output class="boxoutput" name="paylight"></output> บาท<br>
-
-            <h2 class="title1">รวม</h2>
-            <h3>ค่าห้อง <input class="boxinput" type="number" id="costroom" min="1000" max="1500" step="500" value="1000"> บาท<br>
-            รวมทั้งสิ้น <output class="boxoutput" name="allcost"></output> บาท<br>
-            </h3></form>
+        <div class="row">
+            <div class="col">
+                <h2 class="title1">น้ำ</h2>
+                <h3>ค่าน้ำ <input class="boxinput1" type="number" id="costwater" value="20"><br>
+                    น้ำเก่า <input class="boxinput2" type="number" id="waterbefore" value=""><br>
+                    น้ำใหม่ <input class="boxinput2" type="number" id="waterafter" value=""><br>
+                    ใช้ <output class="boxoutput" name="usewater"></output><br>
+                    ราคา <output class="boxoutput" name="paywater"></output><br>
+            </div>
+            <div class="col">
+                <h2 class="title1">ไฟ</h2>
+                <h3>ค่าไฟ <input class="boxinput1" type="number" id="costlight" value="7"><br>
+                    ไฟเก่า <input class="boxinput2" type="number" id="lightbefore" value=""><br>
+                    ไฟใหม่ <input class="boxinput2" type="number" id="lightafter" value=""><br>
+                    ใช้ <output class="boxoutput" name="uselight"></output><br>
+                    ราคา <output class="boxoutput" name="paylight"></output><br>
+            </div>
+            <div class="col">
+                <h2 class="title1">รวม</h2>
+                <h3>ค่าห้อง <input class="boxinput" type="number" id="costroom" min="1000" max="1500" step="500"
+                        value="1000"><br>
+                    รวม <output class="boxoutput" name="allcost"></output> บาท<br>
+                </h3>
+    </form>
+    </div>
+    </div>
 </body>
+
 </html>
